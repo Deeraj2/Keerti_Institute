@@ -1,0 +1,54 @@
+
+{% extends 'register/basic.html' %}
+
+{% block title %} Register{% endblock %}
+
+{% block style %}
+
+            .btn-secondary{
+                color: white;
+                background-color:#8A9A5B;
+                border: none;
+                width: 100px;
+                height: 40px;
+                letter-spacing: 0.9px;
+            }
+            .container h3{
+                font-size: 55px;
+                text-align: center;
+            }
+            label{
+                padding: 5px;
+            }
+            .form-control{
+                width: 65%;
+            }
+            .message{
+                color: #8A9A5B;
+            }
+
+{% endblock %}
+
+{% block body %}
+
+  <div class="container mt-5" id="container" >
+      <h3 class = "form-name">Inquiry Form</h3>
+
+         <br/><br/>
+         {% if submitted %}
+             <p class="message">Your Form  Was Submitted Sucessfully!!</p>
+         {% else %}
+             <form action="" method=POST>
+                 {%csrf_token%}
+                 {{ form.as_p }}
+                 <br/>
+                 <input type="submit" value="Submit"  class="btn btn-secondary">
+                 <br/><br/>
+            </form>
+        {% endif %}
+
+  </div>
+
+
+{% endblock %}
+

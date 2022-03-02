@@ -1,0 +1,127 @@
+
+{% extends 'register/basic.html' %}
+
+{% block title %} Product{% endblock %}
+
+{% block style %}
+
+
+.container{
+    padding-left: 20px;
+    margin-top: 5%;
+}
+.container img{
+    height: auto;
+    width: 350px;
+    padding-bottom: 30px;
+}
+.excel-info{
+    margin-left: 4%;
+}
+.excel-info h1{
+    font-size: 40px;
+    font-weight: 900;
+    letter-spacing: 0.6px;
+}
+.excel-info p{
+    font-size: 20px;
+    margin-left: 30px;
+}
+.content-info{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+}
+.content-info h2{
+    font-size: 30px;
+    font-weight: 600;
+    padding-top: 5%;
+    margin-left: 4%;
+}
+.container .rows{
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+.cols-row{
+    color: white;
+    flex-basis: 25%;
+    border-radius: 10px;
+    background: #8A9A5B;
+    padding: 20px 10px;
+    box-sizing: border-box;
+    margin-bottom: 4%;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.cols-row h3{
+    text-align: center;
+    margin: 10px;
+    font-weight: 600;
+}
+.cols-row:hover{
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.719);
+}
+.content-info p{
+    font-size: 20px;
+    margin-left: 4%;
+}
+.content-info{
+    padding: 20px 10px;
+}
+.container.rows{
+    margin-top: 2%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+{% endblock %}
+
+{% block body %}
+    <section class="container">
+        <img src="/media/{{product.product_image}}">
+        <div class="excel-info">
+            <h1>{{product.product_name}}</h1>
+            <p>{{product.desc}}</p>
+
+        </div>
+        <div class="content-info">
+            <h2>CONTENT</h2>
+        </div>
+        <div class="rows">
+            <div class="cols-row">
+                <h3>{{product.product_contentname1}}</h3>
+                <p>
+                  {{product.product_content1}}
+                </p>
+            </div>
+            <div class="cols-row">
+                <h3>{{product.product_contentname2}}</h3>
+                <p>
+                   {{product.product_content2}}
+                </p>
+            </div>
+            <div class="cols-row">
+                <h3>{{product.product_contentname3}}</h3>
+                <p>
+                    {{product.product_content3}}
+                </p>
+            </div>
+        </div>
+        <div class="content-info">
+            <h2>ELIGIBILITY</h2>
+            <p>{{product.product_info}}</p>
+        </div>
+        <div class="content-info">
+            <h2>DURATION</h2>
+            <p>{{product.product_duration}}</p>
+        </div>
+    </section>
+{% endblock %}
+
+
+
+
+
+
